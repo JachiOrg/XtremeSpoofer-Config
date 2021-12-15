@@ -1,0 +1,51 @@
+# __  ___                           ____                     __
+# \ \/ | |_ _ __ ___ _ __ ___   ___/ ___| _ __   ___   ___  / _| ___ _ __
+#  \  /| __| '__/ _ | '_ ` _ \ / _ \___ \| '_ \ / _ \ / _ \| |_ / _ | '__|
+#  /  \| |_| | |  __| | | | | |  __/___) | |_) | (_) | (_) |  _|  __| |
+# /_/\_\\__|_|  \___|_| |_| |_|\___|____/| .__/ \___/ \___/|_|  \___|_|
+#                                        |_|
+
+no-modify: 100
+
+# Metrics:
+# This plugin uses the bStats metrics system. If you want your data not to be collected, you can disable this system here.
+# The following information is collected and sent to bstats.org:
+#      Whether the server is in offline or online mode
+#      The plugin version
+#      The server version
+#      The java version
+#      The OS version/name and architecture
+#      The location of your server
+#      The core count for the CPU
+#      The number of players online
+#      The Metrics version
+Metrics: true
+
+FakePlayers:
+  Enable: true # Enable or disable fake players on your server. You may want to disable them for a while?
+  Maximum: 300 # Set the maximum number of fake players (Automated or manually added)
+  Automate:
+    Enable: true # Automates the join and leave of fake players.
+    Multiplier: 2.0 # Multiply the number of players on your server
+    Join:
+      Delay: # Delay in ticks in which it takes to add a fake player. (20 Ticks = 1 Second)
+        Maximum: 600
+        Minimum: 300
+    Leave:
+      Delay: # Delay in ticks in which it takes to remove a fake player. (20 Ticks = 1 Second)
+        Maximum: 300
+        Minimum: 100
+
+Requirements: # Requirements for fake players to appear.
+  Enable: true # Enables or disables all requirements
+  RealOnlinePlayers:
+    Maximum: 120 # Number of players where the plugin will no longer allow to add more fake players
+    Minimum: 0 # Minimum number of real players to be able to add fake players.
+  TPS: 18.00 # Minimum TPS to keep adding more fake players.
+
+Latency:
+  Enable: true # Should fake players' latency (ping) change randomly?
+  Maximum: 500
+  Minimum: 50
+
+ModifyPlayerCount: true # Do fake players effect the player count?
