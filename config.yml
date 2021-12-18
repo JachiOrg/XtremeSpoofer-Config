@@ -45,6 +45,7 @@ Requirements: # Requirements for fake players to appear.
 
 Latency:
   Enable: true # Should fake players' latency (ping) change randomly?
+  Interval: 8
   Maximum: 500
   Minimum: 50
 
