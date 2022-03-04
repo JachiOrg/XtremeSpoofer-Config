@@ -5,7 +5,7 @@
 # /_/\_\\__|_|  \___|_| |_| |_|\___|____/| .__/ \___/ \___/|_|  \___|_|
 #                                        |_|
 #
-# Configuration generated in version 1.0.2
+# Configuration generated in version 1.0.3
 
 # Metrics:
 # This plugin uses the bStats metrics system. If you want your data not to be collected, you can disable this system here.
@@ -37,7 +37,7 @@ proxy:
   enabled: false # Enables or disables proxy mode
   ip: '127.0.0.1' # Enter the ip of your proxy server
   port: 5723 # Enter the port you have set in the plugin configuration in Bungee.
-  server_port: 5721 # Use a free port with which the plugin can connect to your Bungee proxy. This port is exclusive for this server
+  server_id: 'survival'
 
 # Discretion:
 # Hides the plugin from staff and users.
@@ -62,8 +62,8 @@ automation:
         min: 200
     leave:
       delay: # Delay in ticks in which it takes to remove a fake player. (20 Ticks = 1 Second)
-        max: 300
-        min: 100
+        max: 900
+        min: 300
     # Configure the name of fake players in nicks.yml
   chat: # Controls chat behavior of fake players
     random_messages: # Random messages are sent to give more realism to the chat.

@@ -8,11 +8,11 @@
 license:
   key: ''
   info:
-    user: '%%USER%%'
-    username: '%%USERNAME%%'
-    resource: '%%RESOURCE%%'
-    version: '%%VERSION%%'
-    timestamp: '%%TIMESTAMP%%'
-    filehash: '%%FILEHASH%%'
-    nonce: '%%NONCE%%'
-    store: Polymart
+    user: '%%__USER__%%'
+    username: '%%__USERNAME__%%'
+    resource: '%%__RESOURCE__%%'
+    version: '%%__VERSION__%%'
+    timestamp: '%%__TIMESTAMP__%%'
+    filehash: '%%__FILEHASH__%%'
+    nonce: '%%__NONCE__%%'
+    store: MC-Market
