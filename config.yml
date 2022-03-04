@@ -4,8 +4,8 @@
 #  /  \| |_| | |  __| | | | | |  __/___) | |_) | (_) | (_) |  _|  __| |
 # /_/\_\\__|_|  \___|_| |_| |_|\___|____/| .__/ \___/ \___/|_|  \___|_|
 #                                        |_|
-
-no-modify: 100
+#
+# Configuration generated in version 1.0.2
 
 # Metrics:
 # This plugin uses the bStats metrics system. If you want your data not to be collected, you can disable this system here.
@@ -19,34 +19,61 @@ no-modify: 100
 #      The core count for the CPU
 #      The number of players online
 #      The Metrics version
-Metrics: true
+metrics: true
 
-FakePlayers:
-  Enable: true # Enable or disable fake players on your server. You may want to disable them for a while?
-  Maximum: 300 # Set the maximum number of fake players (Automated or manually added)
-  Automate:
-    Enable: true # Automates the join and leave of fake players.
-    Multiplier: 2.0 # Multiply the number of players on your server
-    Join:
-      Delay: # Delay in ticks in which it takes to add a fake player. (20 Ticks = 1 Second)
-        Maximum: 600
-        Minimum: 300
-    Leave:
-      Delay: # Delay in ticks in which it takes to remove a fake player. (20 Ticks = 1 Second)
-        Maximum: 300
-        Minimum: 100
+# Language:
+# Sets the language of all plugin messages
+# It is necessary to restart the server for it to take effect.
+#
+# Available languages:
+# English: en
+# Spanish: es
+language: en
 
-Requirements: # Requirements for fake players to appear.
-  Enable: true # Enables or disables all requirements
-  RealOnlinePlayers:
-    Maximum: 120 # Number of players where the plugin will no longer allow to add more fake players
-    Minimum: 0 # Minimum number of real players to be able to add fake players.
-  TPS: 18.00 # Minimum TPS to keep adding more fake players.
+# Proxy:
+# Add fake players to the counter of your bungee proxy.
+# You need to install XtremeSpoofer on your bungee proxy.
+proxy:
+  enabled: false # Enables or disables proxy mode
+  ip: '127.0.0.1' # Enter the ip of your proxy server
+  port: 5723 # Enter the port you have set in the plugin configuration in Bungee.
+  server_port: 5721 # Use a free port with which the plugin can connect to your Bungee proxy. This port is exclusive for this server
 
-Latency:
-  Enable: true # Should fake players' latency (ping) change randomly?
-  Interval: 8
-  Maximum: 500
-  Minimum: 50
+# Discretion:
+# Hides the plugin from staff and users.
+discretion: 
+  enabled: true # Enables or disables discretion.
+  only_op: false # Hide the plugin for OPs only. Useful if you already have another plugin that hides plugins.
+  plugin_name: 'ServerSecurity' # Name to be displayed instead of "XtremeSpoofer.
 
-ModifyPlayerCount: true # Do fake players effect the player count?
+# Automation:
+# Automates the behaviors of fake players, such as logging in and out of the server, talking, answering messages, etc...
+automation:
+  fake_players: # Connecting and disconnecting fake players
+    enabled: true # Enables or disables the automation of the join and leave of fake players.
+    maximum: 80
+    multiplier: 2.0 # Multiply the number of players on your server
+    real_players:
+      max: 80 # Number of players where the plugin will no longer allow to add more fake players
+      min: 2 # Minimum number of real players to be able to add fake players.
+    join:
+      delay: # Delay in ticks in which it takes to add a fake player. (20 Ticks = 1 Second)
+        max: 600
+        min: 200
+    leave:
+      delay: # Delay in ticks in which it takes to remove a fake player. (20 Ticks = 1 Second)
+        max: 300
+        min: 100
+    # Configure the name of fake players in nicks.yml
+  chat: # Controls chat behavior of fake players
+    random_messages: # Random messages are sent to give more realism to the chat.
+      enabled: true # Enable or disable random messages in chat
+      required_real_players: 5 # Real players required to activate this function (0 if you want to deactivate this requirement)
+      chance: 30 # Chance of a message appearing
+      ticks: # Time it takes for the task to be repeated
+        max: 200
+        min: 50
+      # Configure random messages in messages.yml file
+    interactions:
+      enabled: true # Enables or disables all configured interactions
+      # Configure interactions in interactions.yml file
