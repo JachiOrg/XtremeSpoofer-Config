@@ -1,0 +1,66 @@
+# __  ___                           ____                     __
+# \ \/ | |_ _ __ ___ _ __ ___   ___/ ___| _ __   ___   ___  / _| ___ _ __
+#  \  /| __| '__/ _ | '_ ` _ \ / _ \___ \| '_ \ / _ \ / _ \| |_ / _ | '__|
+#  /  \| |_| | |  __| | | | | |  __/___) | |_) | (_) | (_) |  _|  __| |
+# /_/\_\\__|_|  \___|_| |_| |_|\___|____/| .__/ \___/ \___/|_|  \___|_|
+#                                        |_|
+#
+
+events:
+  JoinEvent: 
+    type: 'join'
+    commands:
+      '1': 
+        enabled: true
+        chance: 100
+        delay: 20 #(In ticks)
+        list:
+         - 'bc &a----------'
+         - 'bc &f'
+         - 'bc &eWelcome &b{player}'
+         - 'bc &f'
+         - 'bc &a----------'
+      '2':
+        enabled: false
+        chance: 100
+        delay: 1
+        list: 
+         - 'lp user {player} parent set fakeplayer'
+      '3':
+        enabled: true
+        chance: 30
+        delay: 90
+        list:
+         - 'xs chat {random_fplayer} Welcome {player}!!'
+  
+  QuitEvent:  
+    type: 'quit'
+    commands:
+      '1': 
+        enabled: true
+        chance: 30
+        delay: 90
+        list:
+         - 'xs chat {random_fplayer} Bye {player}'
+      '2': 
+        enabled: true
+        chance: 10
+        delay: 90
+        list:
+         - 'xs chat {random_fplayer} We will miss you {player}!'
+  TaskEvent:  
+    type: 'task'
+    ticks: 80
+    commands:
+      '1': 
+        enabled: false
+        chance: 30
+        delay: 40
+        list:
+         - 'lp user {random_fplayer} parent set vip'
+      '2': 
+        enabled: true
+        chance: 15
+        delay: 80
+        list:
+         - 'lp user {random_fplayer} parent set mvip'

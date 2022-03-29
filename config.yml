@@ -37,12 +37,12 @@ proxy:
   enabled: false # Enables or disables proxy mode
   ip: '127.0.0.1' # Enter the ip of your proxy server
   port: 5723 # Enter the port you have set in the plugin configuration in Bungee.
-  server_id: 'survival'
+  server_id: 'survival' # Name with what the proxy can differentiate the servers. Do not use strange numbers or symbols.
 
 # Discretion:
 # Hides the plugin from staff and users.
 discretion: 
-  enabled: true # Enables or disables discretion.
+  enabled: false # Enables or disables discretion.
   only_op: false # Hide the plugin for OPs only. Useful if you already have another plugin that hides plugins.
   plugin_name: 'ServerSecurity' # Name to be displayed instead of "XtremeSpoofer.
 
@@ -51,7 +51,7 @@ discretion:
 automation:
   fake_players: # Connecting and disconnecting fake players
     enabled: true # Enables or disables the automation of the join and leave of fake players.
-    maximum: 80
+    maximum: 80 # Maximum number of fake players that can be connected
     multiplier: 2.0 # Multiply the number of players on your server
     real_players:
       max: 80 # Number of players where the plugin will no longer allow to add more fake players
@@ -62,8 +62,8 @@ automation:
         min: 200
     leave:
       delay: # Delay in ticks in which it takes to remove a fake player. (20 Ticks = 1 Second)
-        max: 900
-        min: 300
+        max: 6000
+        min: 1200
     # Configure the name of fake players in nicks.yml
   chat: # Controls chat behavior of fake players
     random_messages: # Random messages are sent to give more realism to the chat.
@@ -77,3 +77,7 @@ automation:
     interactions:
       enabled: true # Enables or disables all configured interactions
       # Configure interactions in interactions.yml file
+  other:
+    events: # Events for fake players.
+      enabled: true # Enables or disables all configured events
+      # Configure actions in events.yml file
