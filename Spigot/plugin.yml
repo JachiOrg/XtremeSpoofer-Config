@@ -1,0 +1,11 @@
+name: XtremeSpoofer
+main: red.xtreme.spoofer.spigot.Main
+version: 1.0.7
+author: Whiron
+softdepend: [PlaceholderAPI]
+
+commands:
+  xtremespoofer:
+    aliases: [ xs, xspoofer, xtremes ]
+    description: Base command
+    usage: /xtremespoofer [action]
